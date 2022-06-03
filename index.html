@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户端小网页</title>
+    <style>
+        div.wrapper {
+            border: 1px solid black;
+            height: 250px;
+            width: 550px;
+            background: white;
+            margin: auto;
+        }
+
+        div.form-div {
+            border: 1px solid black;
+            height: 50px;
+            width: 550px;
+            background: yellow;
+            margin: auto;
+        }
+
+        div.img-div {
+            border: 1px solid black;
+            height: 200px;
+            width: 550px;
+            background: white;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h4>{{context.title}}</h4>
+        <ul>
+            {% for i in context.the_news %}
+            <li><a href="#"><span>{{ i }}</span>{{ context.the_news[i] }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-div">
+            <form method="POST">
+                <input type="text">
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="img-div">
+            <span>为出行助力每一天</span>
+        </div>
+
+    </div>
+</body>
+</html>
